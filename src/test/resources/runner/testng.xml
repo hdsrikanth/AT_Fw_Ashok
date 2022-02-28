@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+	<listeners>
+		<listener class-name="com.avin.networks.at.listeners.ListenersClass"></listener>
+		<listener class-name="com.avin.networks.at.listeners.MethodInterceptor"></listener>
+		<listener class-name="com.avin.networks.at.listeners.AnnotationTransformer"></listener>
+	</listeners>
+
+	<test thread-count="5" name="Test" parallel="methods">
+		<parameter name="browser" value="CHROME"></parameter>
+		<classes>
+			<class name="com.avin.networks.at.rough.Test01" />
+		</classes>
+	</test> <!-- Test -->
+
+	<!-- <test thread-count="5" name="Test01" parallel="methods">
+		<parameter name="browser" value="FIREFOX"></parameter>
+		<classes>
+			<class name="com.avin.networks.at.rough.Test01" />
+		</classes>
+	</test>  Test -->
+</suite> <!-- Suite -->
