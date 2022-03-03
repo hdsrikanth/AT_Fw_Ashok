@@ -16,15 +16,18 @@ import com.avin.networks.at.exceptions.ExcelfileException;
 
 
 public final class ExcelUtils {
-
+	
+	static String filePath = GlobalConstants.getInstance().getExcelpath();
+	static XSSFWorkbook woorkbook;
+	static XSSFSheet sheet;
+	
 	private ExcelUtils() { }
 	
-	@SuppressWarnings("resource")
 	public static List<Map<String, String>> getTestDetails(String nameOfSheet) {
 		List<Map<String, String>> list = null;
-		try(FileInputStream fis = new FileInputStream(GlobalConstants.getInstance().getExcelpath())) {
-			XSSFWorkbook woorkbook = new XSSFWorkbook(fis);
-			XSSFSheet sheet = woorkbook.getSheet(nameOfSheet);
+		try(FileInputStream fis = new FileInputStream(filePath)) {
+			woorkbook = new XSSFWorkbook(fis);
+			sheet = woorkbook.getSheet(nameOfSheet);
 
 			int lastRowNo = sheet.getLastRowNum();
 			int lastColNo = sheet.getRow(0).getLastCellNum();

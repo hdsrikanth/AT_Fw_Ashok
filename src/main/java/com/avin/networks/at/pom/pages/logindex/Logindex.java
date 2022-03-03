@@ -6,7 +6,6 @@ import com.avin.networks.at.config.enums.WaitStrategy;
 import com.avin.networks.at.pom.factories.objects.LogindexObj;
 import com.avin.networks.at.pom.pages.base.BasePage;
 import com.avin.networks.at.pom.pages.home.Home;
-import com.avin.networks.at.reports.ExtentLogger;
 import com.avin.networks.at.utility.WaitUtils;
 
 public class Logindex extends BasePage {
@@ -21,13 +20,13 @@ public class Logindex extends BasePage {
     
     private Logindex entryOfUsername(String user) {
 		doSendkeys(ipOfUsername, user, WaitStrategy.PRESENCE);
-		ExtentLogger.getInstance().pass(user+" is entered successfully");
+		//ExtentLogger.getInstance().pass(user+" is entered successfully");
 		return this;
 	}
 	
 	private Logindex entryOfPassword(String pass) {
 		doSendkeys(ipOfPassword, pass, WaitStrategy.PRESENCE);
-		ExtentLogger.getInstance().pass("Password filed is entered successfully");
+		//ExtentLogger.getInstance().pass("Password filed is entered successfully");
 		return this;
 	}
 	

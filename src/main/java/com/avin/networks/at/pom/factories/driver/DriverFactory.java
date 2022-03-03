@@ -6,7 +6,6 @@ public class DriverFactory {
 
 	private DriverFactory() { 	}
 	
-	@SuppressWarnings({ "unused" })
 	public static DriverInterface getManager(DriverTypes driverTypes) {
 		// WebDriver driver = null;
 		// browser = System.getProperty("browser", browser);

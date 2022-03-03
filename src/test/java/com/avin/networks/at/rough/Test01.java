@@ -21,7 +21,7 @@ public class Test01 extends SetupTest{
 	@CustomAnnotation(author = { "Ashok" }, category = {CategoryType.SMOKE })
 	@Test(dataProvider = "getData", dataProviderClass = DataProviderUtils.class)
 	public void logIndex(Map<String, String> data) {
-		System.out.println("Data : "+data);
+		// System.out.println("Data : "+data);
 		LogindexObj login = new LogindexObj(data.get("username"), data.get("password"));
 		admin = new Logindex().
 				doLogin(login).
